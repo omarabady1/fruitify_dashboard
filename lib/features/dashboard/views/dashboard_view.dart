@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruitify_dashboard/features/add_product/presentation/views/add_product_view.dart';
+import 'package:fruitify_dashboard/widgets/custom_button.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
@@ -6,8 +8,16 @@ class DashboardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Dashboard'),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        child: Center(
+          child: CustomButton(
+            label: 'Add Product',
+            onPressed: () {
+              Navigator.pushNamed(context, AddProductView.routeName);
+            },
+          ),
+        ),
       ),
     );
   }
