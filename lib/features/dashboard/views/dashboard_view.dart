@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruitify_dashboard/features/add_product/presentation/views/add_product_view.dart';
-import 'package:fruitify_dashboard/widgets/custom_button.dart';
+import 'package:fruitify_dashboard/core/widgets/custom_button.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});

@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:fruitify_dashboard/widgets/app_text_styles.dart';
-import 'package:fruitify_dashboard/widgets/constants.dart';
+import 'package:fruitify_dashboard/core/widgets/app_text_styles.dart';
+import 'package:fruitify_dashboard/core/widgets/constants.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 

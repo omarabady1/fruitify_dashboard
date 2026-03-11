@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fruitify_dashboard/widgets/app_text_styles.dart';
-import 'package:fruitify_dashboard/widgets/constants.dart';
+import 'package:fruitify_dashboard/core/widgets/app_text_styles.dart';
+import 'package:fruitify_dashboard/core/widgets/constants.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({

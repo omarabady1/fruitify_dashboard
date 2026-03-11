@@ -5,10 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruitify_dashboard/features/add_product/domain/entities/add_product_input_entity.dart';
 import 'package:fruitify_dashboard/features/add_product/presentation/manager/cubit/add_product_cubit.dart';
-import 'package:fruitify_dashboard/widgets/constants.dart';
-import 'package:fruitify_dashboard/widgets/custom_button.dart';
-import 'package:fruitify_dashboard/widgets/custom_text_form_field.dart';
-import 'package:fruitify_dashboard/widgets/image_picker_field.dart';
+import 'package:fruitify_dashboard/core/widgets/constants.dart';
+import 'package:fruitify_dashboard/core/widgets/custom_button.dart';
+import 'package:fruitify_dashboard/core/widgets/custom_text_form_field.dart';
+import 'package:fruitify_dashboard/core/widgets/image_picker_field.dart';
 
 class AddProductBody extends StatefulWidget {
   const AddProductBody({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruitify_dashboard/widgets/app_text_styles.dart';
+import 'package:fruitify_dashboard/core/widgets/app_text_styles.dart';
 
 AppBar buildAppBar(
   BuildContext context, {
