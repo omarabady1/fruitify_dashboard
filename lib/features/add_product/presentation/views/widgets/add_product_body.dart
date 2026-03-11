@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fruitify_dashboard/features/add_product/domain/entities/add_product_input_entity.dart';
 import 'package:fruitify_dashboard/widgets/constants.dart';
 import 'package:fruitify_dashboard/widgets/custom_button.dart';
 import 'package:fruitify_dashboard/widgets/custom_text_form_field.dart';
@@ -135,7 +136,14 @@ class _AddProductBodyState extends State<AddProductBody> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  // TODO: handle saving product
+                  AddProductInputEntity addProductInputEntity = AddProductInputEntity(
+                    productName: productName,
+                    price: price,
+                    code: code,
+                    description: description,
+                    image: productImage!,
+                    isFeatured: isFeatured,
+                  );
                 } else {
                   setState(() {
                     autovalidateMode = AutovalidateMode.always;
