@@ -1,12 +1,15 @@
+import 'dart:io';
 import 'package:fruitify_dashboard/core/services/cloud_storage_service.dart';
-import 'package:dartz/dartz.dart';
-import 'package:fruitify_dashboard/core/errors/failures.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 class FireStorageService implements CloudStorageService {
-  final storageReference = FirebaseStorage.instance;
+  final storageReference = FirebaseStorage.instance.ref();
   @override
-    Future<Either<Failure, String>> uploadImage(String image) {
-      throw UnimplementedError();
+  Future<String> uploadFile(File image, String path) async {
+    final fileName = path + image.path.split('/').last;
+    final uploadTask = storageReference.child(fileName).putFile(image);
+    final snapshot = await uploadTask;
+    final downloadUrl = await snapshot.ref.getDownloadURL();
+    return downloadUrl;
   }
 }

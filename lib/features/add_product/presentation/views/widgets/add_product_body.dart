@@ -136,14 +136,15 @@ class _AddProductBodyState extends State<AddProductBody> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  AddProductInputEntity addProductInputEntity = AddProductInputEntity(
-                    productName: productName,
-                    price: price,
-                    code: code,
-                    description: description,
-                    image: productImage!,
-                    isFeatured: isFeatured,
-                  );
+                  AddProductInputEntity addProductInputEntity =
+                      AddProductInputEntity(
+                        productName: productName,
+                        price: price,
+                        code: code,
+                        description: description,
+                        image: productImage!,
+                        isFeatured: isFeatured,
+                      );
                 } else {
                   setState(() {
                     autovalidateMode = AutovalidateMode.always;

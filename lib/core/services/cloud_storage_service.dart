@@ -1,6 +1,5 @@
-import 'package:dartz/dartz.dart';
-import 'package:fruitify_dashboard/core/errors/failures.dart';
+import 'dart:io';
 
 abstract class CloudStorageService {
-  Future<Either<Failure, String>> uploadImage(String image);
+  Future<String> uploadFile(File file, String path);
 }
