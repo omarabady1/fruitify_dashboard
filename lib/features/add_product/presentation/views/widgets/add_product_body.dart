@@ -2,7 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruitify_dashboard/features/add_product/domain/entities/add_product_input_entity.dart';
+import 'package:fruitify_dashboard/features/add_product/presentation/manager/cubit/add_product_cubit.dart';
 import 'package:fruitify_dashboard/widgets/constants.dart';
 import 'package:fruitify_dashboard/widgets/custom_button.dart';
 import 'package:fruitify_dashboard/widgets/custom_text_form_field.dart';
@@ -145,6 +147,7 @@ class _AddProductBodyState extends State<AddProductBody> {
                         image: productImage!,
                         isFeatured: isFeatured,
                       );
+                      context.read<AddProductCubit>().addProduct(addProductInputEntity);  
                 } else {
                   setState(() {
                     autovalidateMode = AutovalidateMode.always;
