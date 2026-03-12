@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:fruitify_dashboard/features/add_product/domain/entities/review_entity.dart';
+
 class AddProductInputEntity {
   final String productName;
   final String price;
@@ -12,8 +14,9 @@ class AddProductInputEntity {
   final bool isOrganic;
   final int calories;
   final int unit;
-   num avgRating;
-   num ratingCount;
+  num avgRating;
+  num ratingCount;
+  final List<ReviewEntity> reviews;
 
   AddProductInputEntity({
     required this.productName,
@@ -29,5 +32,6 @@ class AddProductInputEntity {
     required this.isOrganic,
     this.avgRating = 0,
     this.ratingCount = 0,
+    required this.reviews,
   });
 }

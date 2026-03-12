@@ -221,6 +221,7 @@ class _AddProductBodyState extends State<AddProductBody> {
                         calories: int.parse(calories),
                         unit: int.parse(unit),
                         isOrganic: isOrganic,
+                        reviews: [],
                       );
                   context.read<AddProductCubit>().addProduct(addProductInputEntity);
                 } else {

@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:fruitify_dashboard/features/add_product/data/models/review_model.dart';
 import 'package:fruitify_dashboard/features/add_product/domain/entities/add_product_input_entity.dart';
 
 class AddProductInputModel {
@@ -16,6 +16,7 @@ class AddProductInputModel {
   final int unit;
   num avgRating;
   num ratingCount;
+  final List<ReviewModel> reviews;
 
   AddProductInputModel({
     required this.productName,
@@ -31,6 +32,7 @@ class AddProductInputModel {
     required this.isOrganic,
     this.avgRating = 0,
     this.ratingCount = 0,
+    required this.reviews,
   });
 
   factory AddProductInputModel.fromEntity(AddProductInputEntity entity) {
@@ -48,6 +50,7 @@ class AddProductInputModel {
       isOrganic: entity.isOrganic,
       avgRating: entity.avgRating,
       ratingCount: entity.ratingCount,
+      reviews: entity.reviews.map((review) => ReviewModel.fromEntity(review)).toList(),
     );
   }
 
@@ -64,5 +67,6 @@ class AddProductInputModel {
     'isOrganic': isOrganic,
     'avgRating': avgRating,
     'ratingCount': ratingCount,
+    'reviews': reviews.map((review) => review.toJson()).toList(),
   };
 }
