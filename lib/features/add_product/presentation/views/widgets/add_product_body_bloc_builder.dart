@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruitify_dashboard/core/widgets/show_custom_snack_bar.dart';
 import 'package:fruitify_dashboard/features/add_product/presentation/manager/cubit/add_product_cubit.dart';
 import 'package:fruitify_dashboard/features/add_product/presentation/views/widgets/add_product_body.dart';
 import 'package:fruitify_dashboard/core/widgets/custom_progress_hud.dart';
@@ -16,11 +17,7 @@ class AddProductBodyBlocBuilder extends StatelessWidget {
           showErrorSnackBar(context, state.errorMessage);
         }
         if (state is AddProductSuccess) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Product added successfully'),
-            ),
-          );
+          showCustomSnackBar(context, 'Product added successfully');
         }
       },
       builder: (context, state) {
