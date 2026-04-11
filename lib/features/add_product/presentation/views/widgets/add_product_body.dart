@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruitify_dashboard/features/add_product/domain/entities/add_product_input_entity.dart';
+import 'package:fruitify_dashboard/features/add_product/domain/entities/product_entity.dart';
 import 'package:fruitify_dashboard/features/add_product/presentation/manager/cubit/add_product_cubit.dart';
 import 'package:fruitify_dashboard/core/widgets/constants.dart';
 import 'package:fruitify_dashboard/core/widgets/custom_button.dart';
@@ -209,21 +209,22 @@ class _AddProductBodyState extends State<AddProductBody> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  AddProductInputEntity addProductInputEntity =
-                      AddProductInputEntity(
-                        productName: productName,
-                        price: price,
-                        code: code,
-                        description: description,
-                        image: productImage!,
-                        isFeatured: isFeatured,
-                        expirationMonths: int.parse(expirationMonths),
-                        calories: int.parse(calories),
-                        unit: int.parse(unit),
-                        isOrganic: isOrganic,
-                        reviews: [],
-                      );
-                  context.read<AddProductCubit>().addProduct(addProductInputEntity);
+                  ProductEntity addProductInputEntity = ProductEntity(
+                    productName: productName,
+                    price: price,
+                    code: code,
+                    description: description,
+                    image: productImage!,
+                    isFeatured: isFeatured,
+                    expirationMonths: int.parse(expirationMonths),
+                    calories: int.parse(calories),
+                    unit: int.parse(unit),
+                    isOrganic: isOrganic,
+                    reviews: [],
+                  );
+                  context.read<AddProductCubit>().addProduct(
+                    addProductInputEntity,
+                  );
                 } else {
                   setState(() {
                     autovalidateMode = AutovalidateMode.always;
@@ -238,4 +239,3 @@ class _AddProductBodyState extends State<AddProductBody> {
     );
   }
 }
-
