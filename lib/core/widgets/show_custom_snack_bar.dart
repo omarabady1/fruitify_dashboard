@@ -5,7 +5,7 @@ import 'package:fruitify_dashboard/core/widgets/constants.dart';
 void showCustomSnackBar(BuildContext context, String text) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      duration: Duration(seconds: 1),
+      duration: Duration(seconds: 3),
       content: Row(
         children: [
           const Icon(Icons.check_circle_outline, color: Colors.white),
