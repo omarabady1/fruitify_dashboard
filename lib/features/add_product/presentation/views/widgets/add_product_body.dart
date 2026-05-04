@@ -20,8 +20,9 @@ class AddProductBody extends StatefulWidget {
 class _AddProductBodyState extends State<AddProductBody> {
   final _formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  late String productName, price, code, description;
+  late String productName, code, description;
   late String expirationMonths, calories, unit;
+  late double price;
   File? productImage;
   bool isFeatured = false;
   bool isOrganic = false;
@@ -79,7 +80,7 @@ class _AddProductBodyState extends State<AddProductBody> {
               onFieldSubmitted: (_) => _codeFocus.requestFocus(),
               keyboardType: TextInputType.number,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              onSaved: (value) => price = value!,
+              onSaved: (value) => price = double.parse(value!),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter price';

@@ -4,7 +4,7 @@ import 'package:fruitify_dashboard/features/add_product/domain/entities/product_
 
 class ProductModel {
   final String productName;
-  final String price;
+  final double price;
   final String code;
   final String description;
   final File image;
