@@ -16,6 +16,7 @@ class ProductModel {
   final int unit;
   num avgRating;
   num ratingCount;
+  num amount;
   int sellingCount;
   final List<ReviewModel> reviews;
 
@@ -34,6 +35,7 @@ class ProductModel {
     this.avgRating = 0,
     this.ratingCount = 0,
     this.sellingCount = 0,
+    this.amount = 1,
     required this.reviews,
   });
 

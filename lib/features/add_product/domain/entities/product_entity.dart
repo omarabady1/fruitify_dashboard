@@ -14,6 +14,7 @@ class ProductEntity {
   final bool isOrganic;
   final int calories;
   final int unit;
+  num amount;
   num avgRating;
   num ratingCount;
   final List<ReviewEntity> reviews;
@@ -32,6 +33,8 @@ class ProductEntity {
     required this.isOrganic,
     this.avgRating = 0,
     this.ratingCount = 0,
+    this.amount = 1,
     required this.reviews,
+    
   });
 }
